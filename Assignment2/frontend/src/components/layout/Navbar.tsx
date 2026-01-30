@@ -17,7 +17,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if(token.accessToken || token.refreshToken){
+  if(token.accessToken){
     return <></>
   }
 

@@ -17,7 +17,6 @@ export const getTokens = () => ({
 
 export const clearTokens = () => {
     Cookies.remove("accessToken");
-    Cookies.remove("refreshToken");
 };
 export const setUser = (user: User) => {
     if (typeof window === "undefined") return;
