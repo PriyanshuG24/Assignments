@@ -18,6 +18,11 @@ app.use(
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path} - ${new Date().toISOString()}`);
+    next();
+});
+
 app.use("/api/auth", routes);
 app.use("/api/user", userRoutes);
 app.use("/api/post", postRoutes);

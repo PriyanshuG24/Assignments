@@ -15,7 +15,6 @@ const registerUser = async (req, res) => {
         }
         const { username, email, password } = req.body;
         let user = await User.findOne({ $or: [{ email }, { username }] });
-        console.log(user)
         if (user) {
             return res.status(400).json({
                 success: false,
@@ -30,7 +29,6 @@ const registerUser = async (req, res) => {
             message: "User registered successfully!!"
         });
     } catch (error) {
-        console.log(error)
         return res.status(500).json({
             success: false,
             message: "Intenal server error",
@@ -149,7 +147,6 @@ const refreshTokenUser = async (req, res) => {
         });
 
     } catch (error) {
-        console.error("Refresh token error:", error);
 
         return res.status(500).json({
             success: false,

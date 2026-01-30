@@ -1,0 +1,162 @@
+[
+    {
+        "title": "AWS Activate Credits",
+        "description": "Get up to $1000 in AWS credits for early-stage startups to build and scale infrastructure.",
+        "category": "cloud",
+        "partnerName": "Amazon Web Services",
+        "isLocked": true,
+        "expiresAt": "2026-12-31T23:59:59.000Z"
+    },
+    {
+        "title": "Google Cloud Startup Credits",
+        "description": "Receive $500 in Google Cloud credits for hosting, databases, and AI services.",
+        "category": "cloud",
+        "partnerName": "Google Cloud",
+        "isLocked": true,
+        "expiresAt": "2026-06-30T23:59:59.000Z"
+    },
+    {
+        "title": "Notion Pro – 3 Months Free",
+        "description": "Free Notion Pro plan for teams to organize docs, tasks, and knowledge.",
+        "category": "productivity",
+        "partnerName": "Notion",
+        "isLocked": false,
+        "expiresAt": "2026-03-31T23:59:59.000Z"
+    },
+    {
+        "title": "Slack Standard Trial",
+        "description": "Extended Slack Standard trial for startups to improve team communication.",
+        "category": "productivity",
+        "partnerName": "Slack",
+        "isLocked": false,
+        "expiresAt": "2026-02-28T23:59:59.000Z"
+    },
+    {
+        "title": "Stripe Fee Waiver",
+        "description": "No Stripe processing fees on your first $20,000 in payments.",
+        "category": "devtools",
+        "partnerName": "Stripe",
+        "isLocked": true,
+        "expiresAt": "2026-09-30T23:59:59.000Z"
+    },
+    {
+        "title": "Vercel Pro – 50% Off",
+        "description": "Deploy frontend apps faster with Vercel Pro at half the price.",
+        "category": "devtools",
+        "partnerName": "Vercel",
+        "isLocked": false,
+        "expiresAt": "2026-01-31T23:59:59.000Z"
+    },
+    {
+        "title": "Postmark Email Credits",
+        "description": "Send up to 100,000 transactional emails for free using Postmark.",
+        "category": "devtools",
+        "partnerName": "Postmark",
+        "isLocked": false,
+        "expiresAt": "2026-04-30T23:59:59.000Z"
+    },
+    {
+        "title": "Mixpanel Growth Plan",
+        "description": "Free Mixpanel Growth plan for tracking user behavior and analytics.",
+        "category": "analytics",
+        "partnerName": "Mixpanel",
+        "isLocked": true,
+        "expiresAt": "2026-08-31T23:59:59.000Z"
+    },
+    {
+        "title": "Amplitude Analytics Credits",
+        "description": "Get startup credits to analyze product usage and retention metrics.",
+        "category": "analytics",
+        "partnerName": "Amplitude",
+        "isLocked": true,
+        "expiresAt": "2026-07-31T23:59:59.000Z"
+    },
+    {
+        "title": "Hotjar Plus – 6 Months Free",
+        "description": "Understand user behavior with heatmaps and session recordings.",
+        "category": "analytics",
+        "partnerName": "Hotjar",
+        "isLocked": false,
+        "expiresAt": "2026-05-31T23:59:59.000Z"
+    },
+    {
+        "title": "HubSpot Starter CRM",
+        "description": "Free HubSpot CRM tools to manage leads and customer relationships.",
+        "category": "marketing",
+        "partnerName": "HubSpot",
+        "isLocked": false,
+        "expiresAt": "2026-10-31T23:59:59.000Z"
+    },
+    {
+        "title": "Mailchimp Marketing Credits",
+        "description": "Email marketing credits for newsletters and campaigns.",
+        "category": "marketing",
+        "partnerName": "Mailchimp",
+        "isLocked": false,
+        "expiresAt": "2026-06-15T23:59:59.000Z"
+    },
+    {
+        "title": "Figma Professional – 1 Year",
+        "description": "Collaborative design tools for product and UI teams.",
+        "category": "productivity",
+        "partnerName": "Figma",
+        "isLocked": true,
+        "expiresAt": "2026-11-30T23:59:59.000Z"
+    },
+    {
+        "title": "Canva Pro for Startups",
+        "description": "Design marketing assets easily with Canva Pro features.",
+        "category": "marketing",
+        "partnerName": "Canva",
+        "isLocked": false,
+        "expiresAt": "2026-04-15T23:59:59.000Z"
+    },
+    {
+        "title": "Sentry Error Monitoring",
+        "description": "Monitor and fix application errors with Sentry credits.",
+        "category": "devtools",
+        "partnerName": "Sentry",
+        "isLocked": true,
+        "expiresAt": "2026-09-15T23:59:59.000Z"
+    },
+    {
+        "title": "Datadog Monitoring Credits",
+        "description": "Infrastructure and application monitoring credits for startups.",
+        "category": "analytics",
+        "partnerName": "Datadog",
+        "isLocked": true,
+        "expiresAt": "2026-12-15T23:59:59.000Z"
+    },
+    {
+        "title": "Intercom Starter Discount",
+        "description": "Customer support and messaging tools with startup discounts.",
+        "category": "marketing",
+        "partnerName": "Intercom",
+        "isLocked": true,
+        "expiresAt": "2026-08-15T23:59:59.000Z"
+    },
+    {
+        "title": "DigitalOcean Credits",
+        "description": "Cloud hosting credits to deploy servers and databases.",
+        "category": "cloud",
+        "partnerName": "DigitalOcean",
+        "isLocked": false,
+        "expiresAt": "2026-07-01T23:59:59.000Z"
+    },
+    {
+        "title": "Linear Issue Tracking",
+        "description": "Fast issue tracking and project management for product teams.",
+        "category": "productivity",
+        "partnerName": "Linear",
+        "isLocked": false,
+        "expiresAt": "2026-03-15T23:59:59.000Z"
+    },
+    {
+        "title": "Algolia Search Credits",
+        "description": "Hosted search API credits for fast and relevant search experiences.",
+        "category": "devtools",
+        "partnerName": "Algolia",
+        "isLocked": true,
+        "expiresAt": "2026-10-15T23:59:59.000Z"
+    }
+]
