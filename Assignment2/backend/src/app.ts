@@ -12,7 +12,9 @@ export function createApp() {
     app.use(helmet());
     app.use(
         cors({
-            origin: ["http://localhost:3000"],
+            origin: process.env.NODE_ENV === 'production'
+                ? ["https://your-frontend-url.vercel.app"]
+                : ["http://localhost:3000"],
             credentials: true,
         })
     );
