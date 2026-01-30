@@ -3,38 +3,21 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 import { env } from '../../config/env.js'
 import { SignatureRequest } from '../../modules/users/user.types.js'
 
-
-
-
 export const findByEmail = async (email: string) => {
-
     return await User.findOne({ email })
-
 }
-
-
 
 export const createUser = async (userData: { email: string; password: string; username: string }) => {
-
     const user = new User(userData)
-
     return await user.save()
-
 }
-
-
-
 export const findById = async (id: string) => {
-
     return await User.findById(id)
-
 }
 
 export const findByIdAndVerify = async (id: string) => {
     return await User.findByIdAndUpdate(id, { isVerified: true }, { new: true })
 }
-
-
 
 export const generateTokens = (user: SignatureRequest) => {
     const secretKey: string = env.JWT_ACCESS_SECRET;
