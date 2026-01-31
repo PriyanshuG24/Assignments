@@ -3,7 +3,7 @@ import { toast } from "sonner";
 import { dealsAPI } from "@/lib";
 import { getErrorMessage } from "@/lib/utils";
 import { useDealStore } from "@/store";
-
+import { useRouter } from "next/navigation";
 export const useDeals = () => {
   const {
     deals,
@@ -19,6 +19,7 @@ export const useDeals = () => {
     setErrorDeals,
     setErrorMyDeals,
   } = useDealStore();
+  const router = useRouter();
 
   const fetchAllDeals = useCallback(async () => {
     setLoadingDeals(true);
@@ -54,7 +55,7 @@ export const useDeals = () => {
     try {
       const res = await dealsAPI.claimDeal(dealId);
       toast.success(res?.data?.message || "Deal claimed");
-
+      router.push("/profile")
     } catch (err) {
       toast.error(getErrorMessage(err));
     }

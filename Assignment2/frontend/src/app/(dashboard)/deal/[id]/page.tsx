@@ -22,6 +22,7 @@ export default function DealPage() {
   const handleClaim=async()=>{
     await claimDeal(id as string)
     setOpen(false)
+
   }
   if (!deal) {
     return (

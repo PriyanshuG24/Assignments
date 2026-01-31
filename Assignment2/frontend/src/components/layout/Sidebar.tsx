@@ -66,7 +66,7 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
       
       <aside className={`
         w-64 shrink-0 border-r border-slate-200 bg-sky-200 px-6 py-8 
-        fixed md:relative h-full md:h-auto z-50
+        fixed md:relative top-0 left-0 h-screen md:h-auto z-50
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         ${isOpen ? 'flex' : 'hidden md:flex'} flex-col
@@ -148,6 +148,8 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
             )}
           </div>
         </div>
+
+        {/* Status / Sort */}
         <div className="mb-10">
           <h3 className="mb-3 text-md font-bold text-slate-700 uppercase tracking-wide">Status</h3>
 

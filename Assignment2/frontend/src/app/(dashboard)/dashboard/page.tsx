@@ -8,15 +8,11 @@ import { useSearch } from "@/hooks/useSearch";
 export default function Dashboard() {
   const { fetchAllDeals } = useDeals();
   const { updateSearchParams, loading } = useSearch();
-
-  // ✅ prevents double call in dev StrictMode
   const didFetch = useRef(false);
 
   useEffect(() => {
     if (didFetch.current) return;
     didFetch.current = true;
-
-    // ✅ initial load should use getAll deals, NOT search
     fetchAllDeals();
   }, [fetchAllDeals]);
 
@@ -43,7 +39,6 @@ export default function Dashboard() {
               focus:outline-none
               focus:ring-2 focus:ring-sky-300
             "
-            // ✅ this still works; it will trigger /api/search only after typing
             onChange={(e) => updateSearchParams({ q: e.target.value })}
           />
         </div>
