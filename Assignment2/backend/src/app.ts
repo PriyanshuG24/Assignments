@@ -8,12 +8,13 @@ import { apiRouter } from "./routes/index.js";
 
 export function createApp() {
     const app = express();
-    app.use(
-        cors({
-            origin: ["http://localhost:3000"],
-            credentials: true,
-        })
-    );
+    app.use(cors({
+        origin: [
+            "http://localhost:3000",
+            "https://assignments-nlt7.vercel.app"
+        ],
+        credentials: true,
+    }));
 
     app.use(express.json());
     app.use(cookieParser());
