@@ -31,7 +31,7 @@ export const useAuth = () => {
             toast.success("Signed in successfully");
             router.push(ROUTES.DASHBOARD);
             return userData as User;
-        } catch (error) {
+        } catch (error: any) {
             toast.error(getErrorMessage(error));
             throw error;
         } finally {
@@ -50,7 +50,7 @@ export const useAuth = () => {
             setUserState(newUser);
 
             toast.success("Account created successfully");
-            router.push(ROUTES.DASHBOARD);
+            router.push(ROUTES.SIGNIN);
             return newUser as User;
         } catch (error) {
             toast.error(getErrorMessage(error));
@@ -79,7 +79,6 @@ export const useAuth = () => {
     const refreshAuth = async () => {
         try {
             const response = await authAPI.refreshToken();
-            console.log(response.data)
             const { accessToken } = response.data.data;
             setTokens(accessToken);
             return true;

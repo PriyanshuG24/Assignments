@@ -21,8 +21,8 @@ export const userRouter = Router()
 userRouter.post('/register', async (req: Request, res: Response, next: NextFunction) => {
     try {
         const validatedData = registerSchema.safeParse(req.body)
-        if (validatedData.error) {
-            throw new BadRequestError(validatedData.error?.message || 'Invalid data')
+        if (!validatedData.success) {
+            throw new BadRequestError('Invalid data', validatedData.error.issues)
         }
         const user = await register(validatedData.data)
         res.status(201).json({
@@ -37,8 +37,8 @@ userRouter.post('/register', async (req: Request, res: Response, next: NextFunct
 userRouter.post('/login', async (req: Request, res: Response, next: NextFunction) => {
     try {
         const validatedData = loginSchema.safeParse(req.body)
-        if (validatedData.error) {
-            throw new BadRequestError(validatedData.error?.message || 'Invalid data')
+        if (!validatedData.success) {
+            throw new BadRequestError('Invalid data', validatedData.error.issues)
         }
         const authResponse = await login(validatedData.data)
         res.cookie('refreshToken', authResponse.refreshToken, {

@@ -24,7 +24,6 @@ const DealCard = ({ deal }: { deal: Deal }) => {
       `}
       onClick={() => {
         router.push(`/deal/${deal.dealId}`)
-        console.log(deal)
       }}
     >
       {/* Header */}

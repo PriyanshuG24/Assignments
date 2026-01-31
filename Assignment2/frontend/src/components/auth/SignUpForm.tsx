@@ -1,4 +1,3 @@
-// src/components/auth/register-form.tsx
 "use client";
 
 import { useState } from "react";
@@ -22,7 +21,7 @@ import { Mail, Lock, Eye, EyeOff,User,Home } from "lucide-react"
 const registerSchema = z.object({
   email: z.email("Please enter a valid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
-  name: z.string().min(2, "Name must be at least 2 characters"),
+  username: z.string().min(2, "Name must be at least 2 characters"),
 });
 
 type RegisterFormValues = z.infer<typeof registerSchema>;
@@ -37,7 +36,7 @@ export default function SignUpForm() {
     defaultValues: {
       email: "",
       password: "",
-      name: "",
+      username: "",
     },
   });
 
@@ -71,7 +70,7 @@ export default function SignUpForm() {
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <FormField
                   control={form.control}
-                  name="name"
+                  name="username"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>

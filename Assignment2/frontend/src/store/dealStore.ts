@@ -1,35 +1,40 @@
-import { create } from 'zustand';
-import type { Deal, Claim } from '@/types';
+import { create } from "zustand";
+import type { Deal, Claim } from "@/types";
 
 interface DealStore {
   deals: Deal[];
   myDeals: Claim[];
-  loading: boolean;
-  error: string | null;
+
+  loadingDeals: boolean;
+  loadingMyDeals: boolean;
+  errorDeals: string | null;
+  errorMyDeals: string | null;
 
   setDeals: (deals: Deal[]) => void;
   setMyDeals: (deals: Claim[]) => void;
-  setLoading: (loading: boolean) => void;
-  setError: (error: string | null) => void;
+
+  setLoadingDeals: (v: boolean) => void;
+  setLoadingMyDeals: (v: boolean) => void;
+
+  setErrorDeals: (msg: string | null) => void;
+  setErrorMyDeals: (msg: string | null) => void;
 }
 
 export const useDealStore = create<DealStore>((set) => ({
   deals: [],
   myDeals: [],
-  loading: false,
-  error: null,
 
-  setDeals: (deals) => set({ deals, error: null }),
-  setMyDeals: (deals) => set({ myDeals: deals, error: null }),
+  loadingDeals: false,
+  loadingMyDeals: false,
+  errorDeals: null,
+  errorMyDeals: null,
 
-  setLoading: (loading) => set({ loading }),
+  setDeals: (deals) => set({ deals, errorDeals: null }),
+  setMyDeals: (deals) => set({ myDeals: deals, errorMyDeals: null }),
 
-  setError: (error) => set({ error }),
+  setLoadingDeals: (v) => set({ loadingDeals: v }),
+  setLoadingMyDeals: (v) => set({ loadingMyDeals: v }),
 
+  setErrorDeals: (msg) => set({ errorDeals: msg }),
+  setErrorMyDeals: (msg) => set({ errorMyDeals: msg }),
 }));
-
-export const useAllDeals = () => useDealStore((state) => state.deals);
-export const useDealsLoading = () => useDealStore((state) => state.loading);
-export const useDealsError = () => useDealStore((state) => state.error);
-export const useMyDeals = () => useDealStore((state) => state.myDeals);
-

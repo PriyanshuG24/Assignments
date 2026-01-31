@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Deal } from "@/types"
+import { getUser } from "@/lib/auth"
 
 type ClaimDealDialogProps = {
   open: boolean
@@ -26,6 +27,9 @@ export default function ClaimDealDialog({
   onClaim,
   loading = false,
 }: ClaimDealDialogProps) {
+  const user = getUser()
+  const isVerified = user?.isVerified
+  const shouldShowLocked = !isVerified && deal.isLocked
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -71,7 +75,7 @@ export default function ClaimDealDialog({
             </span>
           </div>
 
-          {deal.isLocked && (
+          {shouldShowLocked && (
             <div className="rounded-xl bg-yellow-100 px-3 py-2 text-xs text-yellow-800">
               This deal requires account verification.
             </div>
@@ -89,7 +93,7 @@ export default function ClaimDealDialog({
 
           <Button
             onClick={onClaim}
-            disabled={loading || deal.isLocked}
+            disabled={loading || shouldShowLocked}
             className="
               rounded-xl
               bg-slate-900

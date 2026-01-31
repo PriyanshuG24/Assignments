@@ -107,8 +107,8 @@ const Home = () => {
           >
             {[
               { title: "Sign up", desc: "Create your founder profile in seconds.", icon: <UserPlus className="w-6 h-6" /> },
-              { title: "Verify startup", desc: "Connect your LinkedIn or Stripe to prove you're building.", icon: <ShieldCheck className="w-6 h-6" /> },
-              { title: "Claim & track", desc: "Get instant access to credits and track your savings.", icon: <CheckCircle className="w-6 h-6" /> }
+              { title: "Get verified", desc: "Go to profile and verify your account to unlock all deals.", icon: <ShieldCheck className="w-6 h-6" /> },
+              { title: "Claim deals", desc: "Get instant access to exclusive credits and track your savings.", icon: <CheckCircle className="w-6 h-6" /> }
             ].map((step, idx) => (
               <motion.div 
                 key={idx}

@@ -6,14 +6,19 @@ import { useState } from "react"
 import ClaimDealDialog from "@/components/deals/ClaimDealDialog"
 import type { Deal } from "@/types"
 import {formatDate} from "@/lib/utils"
+import { getUser } from "@/lib/auth"
 
 export default function DealPage() {
   const { id } = useParams()
   const { deals,claimDeal } = useDeals()
   const [open, setOpen] = useState(false)
-
+  const user = getUser()
+  const isVerified = user?.isVerified
   const deal: Deal | null = deals.find((d) => d.dealId.toString() === id) || null
+  const isLocked = deal?.isLocked
+  const shouldShowLocked = !isVerified && isLocked
   const isExpired = new Date(deal?.expiresAt || "") < new Date()
+  const isDisabled = shouldShowLocked || isExpired
   const handleClaim=async()=>{
     await claimDeal(id as string)
     setOpen(false)
@@ -58,7 +63,7 @@ export default function DealPage() {
             <div>
               <p className="text-slate-500">Access</p>
               <p className="font-medium text-slate-900">
-                {deal.isLocked ? "Verification required" : "Unlocked"}
+                {shouldShowLocked ? "Verification required" : "Open ready to claim"}
               </p>
             </div>
 
@@ -76,7 +81,7 @@ export default function DealPage() {
           </div>
 
           {/* Locked notice */}
-          {deal.isLocked && (
+          {shouldShowLocked && (
             <div className="mt-6 rounded-xl bg-yellow-100 px-4 py-3 text-sm text-yellow-800">
               This deal is locked. Please verify your account to claim it.
             </div>
@@ -86,11 +91,11 @@ export default function DealPage() {
           <div className="mt-8">
             <button
               onClick={() => setOpen(true)}
-              disabled={deal.isLocked}
+              disabled={isDisabled}
               className={`
                 px-6 py-3 rounded-xl text-sm font-medium transition
                 ${
-                  deal.isLocked
+                  isDisabled
                     ? "bg-slate-200 text-slate-500 cursor-not-allowed"
                     : "bg-slate-900 text-white hover:bg-slate-800"
                 }
